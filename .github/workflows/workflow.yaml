@@ -25,4 +25,9 @@ jobs:
           ls ./target
           pwd
           java -jar target/hello-1.0-SNAPSHOT.jar
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Build docker image
+        working-directory: hello
+        run: |
+          docker build -t hello --file ./src/main/docker/Dockerfile .
+          docker image ls
+          docker run hello
