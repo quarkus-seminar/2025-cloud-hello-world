@@ -66,7 +66,7 @@ public class PostResource {
     ClaimValue<Map<String, List<JsonString>>> realmAccess;
 
     @GET
-    @RolesAllowed("admin")
+    @RolesAllowed({"admin","derfois"})
     public List<Post> all() {
         return postRepository
             .listAll()

@@ -1,7 +1,7 @@
 #@BASE=http://localhost:4200/api
 
-### Users ###
-GET {{BASE}}/hello
+###
+GET {{BACKEND}}/api/hello
 
 ###
 GET {{BASE}}/posts

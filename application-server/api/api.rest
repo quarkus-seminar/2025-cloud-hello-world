@@ -1,7 +1,7 @@
 #@BASE=http://localhost:4200/api
 
 ### Users ###
-GET {{BASE}}/hello
+GET {{BACKEND}}/api/hello
 
 ###
 GET {{BASE}}/posts
@@ -38,7 +38,7 @@ scope = openid
 
 ###
 
-GET http://localhost:8080/api/posts
+GET {{BACKEND}}/api/posts
 Accept: application/json
 Authorization: Bearer {{access_token}}
 
