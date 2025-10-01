@@ -34,4 +34,3 @@ jobs:
         run: |
           docker build -t hello --file ./src/main/docker/Dockerfile .
           docker image ls
-          docker run hello
