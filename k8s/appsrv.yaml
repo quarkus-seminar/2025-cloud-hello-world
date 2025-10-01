@@ -16,13 +16,13 @@ spec:
     spec:
       containers:
         - name: appsrv
-          image: {{ .Values.backend.image }}
-          imagePullPolicy: {{ .Values.deployment.imagePullPolicy }}
+          image: ghcr.io/quarkus-seminar/hello:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           startupProbe:
             httpGet:
-              path: /api/q/health
+              path: /q/health
               port: 8080
             timeoutSeconds: 5
             initialDelaySeconds: 30
@@ -33,7 +33,7 @@ spec:
             periodSeconds: 10
           livenessProbe:
             httpGet:
-              path: /api/q/health
+              path: /q/health
               port: 8080
             timeoutSeconds: 5
             initialDelaySeconds: 30
