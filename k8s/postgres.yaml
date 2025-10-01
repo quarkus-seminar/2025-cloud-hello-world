@@ -67,7 +67,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: postgres
-          image: {{ .Values.postgres.image }}
+          image: postgres:17
           ports:
             - containerPort: 5432
               protocol: TCP
