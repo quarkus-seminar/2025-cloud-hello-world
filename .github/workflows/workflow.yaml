@@ -1,6 +1,6 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: [ push ]
 
 env:
   BACKEND_HOME: ./vehicle
@@ -34,3 +34,15 @@ jobs:
         run: |
           docker build -t hello --file ./src/main/docker/Dockerfile .
           docker image ls
+      - name: Build and push classroom-demo
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          working-directory: ${{ env.BACKEND_HOME }}
+          file: ./src/main/docker/Dockerfile
+          platforms: linux/amd64, linux/arm64
+          push: true
+          tags: ghcr.io/${{ env.REPOSITORY }}/hello:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
