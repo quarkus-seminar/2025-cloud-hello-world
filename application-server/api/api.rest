@@ -36,10 +36,6 @@ scope = openid
     client.log("Bearer: " + client.global.get("access_token"));
 %}
 
-### Realm URL
-
-http://localhost:8000/realms/demo/
-
 ###
 
 GET http://localhost:8080/api/posts
